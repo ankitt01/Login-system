@@ -1,9 +1,11 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import {logout} from '../features/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import {logout, selectUser} from '../features/userSlice'
 import './Login.css'
 
 function Logout() {
+    const user = useSelector(selectUser)
+    
     const dispatch = useDispatch(logout())
 
     const handleLogout = (e) => {
@@ -12,7 +14,7 @@ function Logout() {
     }
     return (
         <div className="logout">
-            <h1>Welcome <span className="user__name">Ankit</span></h1>
+            <h1>Welcome <span className="user__name">{user.name}</span></h1>
             <button className="logout__button" onClick={(e) => handleLogout(e)}>Logout</button>
         </div>
     )
