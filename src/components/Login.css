@@ -39,9 +39,17 @@
     border-radius: 3px;
 }
 
+.logout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
 .logout__button {
     min-width: 300px;
-    padding: 17px30px;
+    padding: 17px 30px;
     margin-top: 20px;
     background: black;
     border: none;
